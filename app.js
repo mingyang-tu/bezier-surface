@@ -61,6 +61,9 @@ function initCallbacks(canvas) {
     canvas.onmouseup = mouseup;
     canvas.onmousemove = mousemove;
     canvas.onwheel = wheelscroll;
+    canvas.addEventListener("touchstart", touchstart, { passive: false });
+    canvas.addEventListener("touchend", touchend, { passive: false });
+    canvas.addEventListener("touchmove", touchmove, { passive: false });
 }
 
 
