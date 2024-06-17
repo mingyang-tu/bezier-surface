@@ -1,6 +1,6 @@
 var Ka = 0.3;
 var Kd = 0.3;
-var Ks = 0.2;
+var Ks = 0.25;
 
 var lightLocations = {
     "light1": new Float32Array([-100, 100, 100]),
@@ -114,40 +114,6 @@ function toggle_control_points() {
 
 function toggle_evaluate_point() {
     showEvaluatePoint = document.getElementById("evaluate-point-toggle").checked;
-}
-
-
-function update_Ka() {
-    Ka = document.getElementById("item-ka").value;
-}
-
-
-function update_Kd() {
-    Kd = document.getElementById("item-kd").value;
-}
-
-
-function update_Ks() {
-    Ks = document.getElementById("item-ks").value;
-}
-
-
-function update_light_location(light) {
-    lightLocations[light][0] = document.getElementById(light + "-locX").value;
-    lightLocations[light][1] = document.getElementById(light + "-locY").value;
-    lightLocations[light][2] = document.getElementById(light + "-locZ").value;
-}
-
-
-function toggle_light(light) {
-    if (document.getElementById(light + "-toggle").checked) {
-        for (var i = 0; i < 3; i++)
-            lightColor[light][i] = 1.0;
-    }
-    else {
-        for (var i = 0; i < 3; i++)
-            lightColor[light][i] = 0.0;
-    }
 }
 
 
