@@ -11,12 +11,9 @@ body {
 #WebGL-canvas {
     width: 600px;
     height: 600px;
-    margin: 20px;
-    margin-right: 0;
 }
 
 .setting-block {
-    width: 90vw;
     margin: 20px;
     padding: 20px;
     border: 2px solid #ccc;

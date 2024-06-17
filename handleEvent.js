@@ -53,14 +53,18 @@ function wheelscroll(event) {
 
 
 function touchstart(event) {
-    var touch = event.touches[0];
-    var x = touch.clientX;
-    var y = touch.clientY;
-    var rect = event.target.getBoundingClientRect();
-    if (rect.left <= x && x < rect.right && rect.top <= y && y < rect.bottom) {
-        ui.lastX = x;
-        ui.lastY = y;
-        ui.dragging = true;
+    if (event.touches.length == 1) {
+        var touch = event.touches[0];
+        var x = touch.clientX;
+        var y = touch.clientY;
+        var rect = event.target.getBoundingClientRect();
+        if (rect.left <= x && x < rect.right && rect.top <= y && y < rect.bottom) {
+            ui.lastX = x;
+            ui.lastY = y;
+            ui.dragging = true;
+        }
+    } else if (event.touches.length == 2) {
+        ui.lastTouchDistance = getTouchDistance(event);
     }
 }
 
