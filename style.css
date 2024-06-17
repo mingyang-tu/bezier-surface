@@ -1,0 +1,52 @@
+body {
+    font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.setting-block {
+    width: 800px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.basic-block {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-td {
+    text-align: center;
+}
+
+.left-th {
+    width: 50px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.left-th-full {
+    text-align: right;
+    padding-right: 10px;
+}
+
+input[type="range"] {
+    width: 180px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+input[type="number"] {
+    width: 50px;
+    text-align: center;
+    appearance: textfield;
+    -webkit-inner-spin-button: appearance-none;
+    -webkit-outer-spin-button: appearance-none;
+}
