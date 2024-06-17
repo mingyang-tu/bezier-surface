@@ -2,13 +2,13 @@
 <html>
 
 <head>
-    <title>Curved Surfaces With Textures</title>
+    <title>Bezier Surface With Textures</title>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body onload="startWebGL();">
-    <canvas id="WebGL-canvas" width="800" height="600"></canvas>
+    <canvas id="WebGL-canvas"></canvas>
     <div class="setting-block">
         <div class="basic-block">
             <table>
@@ -30,22 +30,6 @@
                             <option>Image</option>
                             <option>Moss</option>
                             <option>Wood</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="basic-block">
-            <table>
-                <tr>
-                    <th class="left-th-full">Model</th>
-                    <td class="input-td">
-                        <select autocomplete="off" id="item-model" oninput="update_model()">
-                            <option selected="selected">Bezier</option>
-                            <option>B-Spline (degree=1, clamped)</option>
-                            <option>B-Spline (degree=2, clamped)</option>
-                            <option>B-Spline (degree=3, clamped)</option>
-                            <option>B-Spline (degree=3, open)</option>
                         </select>
                     </td>
                 </tr>
@@ -210,11 +194,8 @@
     <script type="text/javascript" src="lib/glMatrix-0.9.5.min.js"></script>
     <script type="text/javascript" src="lib/webgl-utils.js"></script>
     <script type="text/javascript" src="shader.js"></script>
-    <script type="text/javascript" src="model/constant.js"></script>
     <script type="text/javascript" src="model/sphere.js"></script>
     <script type="text/javascript" src="model/bezierSurface.js"></script>
-    <script type="text/javascript" src="model/bsplineSurface.js"></script>
-    <script type="text/javascript" src="model/cubicBsplineSurface.js"></script>
     <script type="text/javascript" src="handleInput.js"></script>
     <script type="text/javascript" src="handleEvent.js"></script>
     <script type="text/javascript" src="app.js"></script>

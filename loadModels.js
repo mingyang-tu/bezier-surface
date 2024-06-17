@@ -2,17 +2,7 @@ const SAMPLE_POINTS = 50;
 
 
 function loadModel() {
-    var model;
-    if (modelName == "B-Spline (degree=1, clamped)")
-        model = bsplineSurface(controlPoints, 1, SAMPLE_POINTS);
-    else if (modelName == "B-Spline (degree=2, clamped)")
-        model = bsplineSurface(controlPoints, 2, SAMPLE_POINTS);
-    else if (modelName == "B-Spline (degree=3, clamped)")
-        model = bsplineSurface(controlPoints, 3, SAMPLE_POINTS);
-    else if (modelName == "B-Spline (degree=3, open)")
-        model = cubicBsplineSurface(controlPoints, SAMPLE_POINTS);
-    else
-        model = bezierSurface(controlPoints, SAMPLE_POINTS);
+    var model = bezierSurface(controlPoints, SAMPLE_POINTS);
 
     // vertex
     modelBuffer.vertexBuffer = gl.createBuffer();
@@ -130,17 +120,7 @@ function loadControlPoints() {
 
 
 function loadEvaluatePoint() {
-    var evaluatePoint;
-    if (modelName == "B-Spline (degree=1, clamped)")
-        evaluatePoint = bsplineEvaluateVertex(controlPoints, 1, toEvaluate["u"], toEvaluate["v"]);
-    else if (modelName == "B-Spline (degree=2, clamped)")
-        evaluatePoint = bsplineEvaluateVertex(controlPoints, 2, toEvaluate["u"], toEvaluate["v"]);
-    else if (modelName == "B-Spline (degree=3, clamped)")
-        evaluatePoint = bsplineEvaluateVertex(controlPoints, 3, toEvaluate["u"], toEvaluate["v"]);
-    else if (modelName == "B-Spline (degree=3, open)")
-        evaluatePoint = cubicBsplineEvaluateVertex(controlPoints, toEvaluate["u"], toEvaluate["v"]);
-    else
-        evaluatePoint = bezierEvaluateVertex(controlPoints, toEvaluate["u"], toEvaluate["v"]);
+    var evaluatePoint = bezierEvaluateVertex(controlPoints, toEvaluate["u"], toEvaluate["v"]);
     document.getElementById("evaluate-point").textContent = `(${evaluatePoint[0].toFixed(2)}, ${evaluatePoint[1].toFixed(2)}, ${evaluatePoint[2].toFixed(2)})`;
 
     var evaluatePointModel = createSphere(new Float32Array(evaluatePoint), [0.0, 1.0, 0.0]);

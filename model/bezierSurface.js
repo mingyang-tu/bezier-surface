@@ -1,3 +1,7 @@
+const BERNSTEIN = [1, 3, 3, 1];
+const DEGREE = 3;
+
+
 function bezierSurface(controlPoints, num_sample) {
     var beziersurface = {
         vertices: [],

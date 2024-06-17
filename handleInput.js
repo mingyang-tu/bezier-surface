@@ -60,7 +60,6 @@ var controlPointsColors = [
 
 var toEvaluate = { u: 0.0, v: 0.0 };
 
-var modelName = "Bezier";
 var shaderName = "Phong";
 var textureName = "Blue";
 
@@ -159,11 +158,4 @@ function update_shader() {
 
 function update_texture() {
     textureName = document.getElementById("item-texture").value;
-}
-
-
-function update_model() {
-    modelName = document.getElementById("item-model").value;
-    modelChanged = true;
-    evaluatePointChanged = true;
 }

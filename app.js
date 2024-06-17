@@ -43,6 +43,10 @@ function initGL(canvas) {
         return;
     }
 
+    var realToCSSPixels = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(canvas.clientWidth * realToCSSPixels);
+    canvas.height = Math.floor(canvas.clientHeight * realToCSSPixels);
+
     gl.viewportWidth = canvas.width;
     gl.viewportHeight = canvas.height;
 
