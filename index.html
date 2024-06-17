@@ -8,101 +8,103 @@
 </head>
 
 <body onload="startWebGL();">
-    <canvas id="WebGL-canvas"></canvas>
-    <div class="setting-block">
-        <div class="basic-block">
-            <table>
-                <tr>
-                    <th class="left-th-full">Shader</th>
-                    <td class="input-td">
-                        <select autocomplete="off" id="item-shader" oninput="update_shader()">
-                            <option selected="selected">Phong</option>
-                            <option>Wireframe</option>
-                        </select>
-                    </td>
-                    <th class="left-th-full" style="padding-left: 30px;">Texture</th>
-                    <td class="input-td">
-                        <select autocomplete="off" id="item-texture" oninput="update_texture()">
-                            <option selected="selected">Blue</option>
-                            <option>Brick</option>
-                            <option>Fabric</option>
-                            <option>Granite</option>
-                            <option>Image</option>
-                            <option>Moss</option>
-                            <option>Wood</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="basic-block">
-            <table>
-                <tr>
-                    <th class="left-th-full">
-                        Selected Control Point <br>
-                        (1 ~ 16, 0 for None)
-                    </th>
-                    <td class="input-td">
-                        <input autocomplete="off" id="selected-point" type="number" value="0" min="0" max="16"
-                            oninput="update_selected_point()">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-th-full">
-                        Show Control Points
-                    </th>
-                    <td class="input-td">
-                        <input autocomplete="off" id="control-points-toggle" type="checkbox" checked
-                            oninput="toggle_control_points()">
-                    </td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <th class="left-th">X</th>
-                    <td class="input-td">
-                        <input autocomplete="off" id="pointX" type="number" step="0.1" oninput="update_point()">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-th">Y</th>
-                    <td class="input-td">
-                        <input autocomplete="off" id="pointY" type="number" step="0.1" oninput="update_point()">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-th">Z</th>
-                    <td class="input-td">
-                        <input autocomplete="off" id="pointZ" type="number" step="0.1" oninput="update_point()">
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="basic-block">
-            <table>
-                <tr>
-                    <th class="left-th-full" id="u-value">u = 0.00</th>
-                    <td class="input-td">
-                        <input autocomplete="off" id="evaluate-u" type="range" value="0" max="1" min="0" step="0.01"
-                            style="vertical-align: middle;" oninput="update_evaluate_point()">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-th-full" id="v-value">v = 0.00</th>
-                    <td class="input-td">
-                        <input autocomplete="off" id="evaluate-v" type="range" value="0" max="1" min="0" step="0.01"
-                            style="vertical-align: middle;" oninput="update_evaluate_point()">
-                    </td>
-                </tr>
-                <tr>
-                    <th class="left-th-full">
-                        <input autocomplete="off" id="evaluate-point-toggle" type="checkbox"
-                            oninput="toggle_evaluate_point()">
-                        Evaluation Point
-                    </th>
-                    <th id="evaluate-point">(0.00, 0.00, 0.00)</th>
-                </tr>
-            </table>
+    <div class="wrapper">
+        <canvas id="WebGL-canvas"></canvas>
+        <div class="setting-block">
+            <div class="basic-block">
+                <table>
+                    <tr>
+                        <th class="left-th-full">Shader</th>
+                        <td class="input-td">
+                            <select autocomplete="off" id="item-shader" oninput="update_shader()">
+                                <option selected="selected">Phong</option>
+                                <option>Wireframe</option>
+                            </select>
+                        </td>
+                        <th class="left-th-full" style="padding-left: 30px;">Texture</th>
+                        <td class="input-td">
+                            <select autocomplete="off" id="item-texture" oninput="update_texture()">
+                                <option selected="selected">Blue</option>
+                                <option>Brick</option>
+                                <option>Fabric</option>
+                                <option>Granite</option>
+                                <option>Image</option>
+                                <option>Moss</option>
+                                <option>Wood</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="basic-block">
+                <table>
+                    <tr>
+                        <th class="left-th-full">
+                            Selected Control Point <br>
+                            (1 ~ 16, 0 for None)
+                        </th>
+                        <td class="input-td">
+                            <input autocomplete="off" id="selected-point" type="number" value="0" min="0" max="16"
+                                oninput="update_selected_point()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-th-full">
+                            Show Control Points
+                        </th>
+                        <td class="input-td">
+                            <input autocomplete="off" id="control-points-toggle" type="checkbox" checked
+                                oninput="toggle_control_points()">
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th class="left-th">X</th>
+                        <td class="input-td">
+                            <input autocomplete="off" id="pointX" type="number" step="0.1" oninput="update_point()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-th">Y</th>
+                        <td class="input-td">
+                            <input autocomplete="off" id="pointY" type="number" step="0.1" oninput="update_point()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-th">Z</th>
+                        <td class="input-td">
+                            <input autocomplete="off" id="pointZ" type="number" step="0.1" oninput="update_point()">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="basic-block">
+                <table>
+                    <tr>
+                        <th class="left-th-full" id="u-value">u = 0.00</th>
+                        <td class="input-td">
+                            <input autocomplete="off" id="evaluate-u" type="range" value="0" max="1" min="0" step="0.01"
+                                style="vertical-align: middle;" oninput="update_evaluate_point()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-th-full" id="v-value">v = 0.00</th>
+                        <td class="input-td">
+                            <input autocomplete="off" id="evaluate-v" type="range" value="0" max="1" min="0" step="0.01"
+                                style="vertical-align: middle;" oninput="update_evaluate_point()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="left-th-full">
+                            <input autocomplete="off" id="evaluate-point-toggle" type="checkbox"
+                                oninput="toggle_evaluate_point()">
+                            Evaluation Point
+                        </th>
+                        <th id="evaluate-point">(0.00, 0.00, 0.00)</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
