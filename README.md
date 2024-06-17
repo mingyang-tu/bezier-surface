@@ -1,3 +1,5 @@
 # WebGL implementation of Bezier Surface With Textures
 
-https://mingyang-tu.github.io/bezier-surface/
+Website: https://mingyang-tu.github.io/bezier-surface/
+
+Texture Images from: https://www.cgbookcase.com/ 
