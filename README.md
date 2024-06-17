@@ -1,4 +1,3 @@
-# NTU ICG Term Project Group07
+# WebGL implementation of Bezier Surface With Textures
 
-## How to Run
-Open `index.html` directly.
+https://mingyang-tu.github.io/bezier-surface/
